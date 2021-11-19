@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken'); 
-const User = require('../model/User');
+const User = require('../model/Doctor');
 
 
 
@@ -16,12 +16,6 @@ exports.auth = (req, res, next) => {
     const token = authHeader && authHeader.split(' ')[1]
 
     console.log("token", token); 
-
-    // if (!token) {
-    //     console.log("not working")
-    //     return res.status(401).json({ error: 'Missing token!' })
-    // }
-
     console.log("getting user"); 
 
     jwt.verify(token, process.env.KEY, (err, user) => {

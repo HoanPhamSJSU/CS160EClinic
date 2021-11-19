@@ -1,4 +1,4 @@
-import React, { Fragment, useState} from "react";
+import React, { Fragment, useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import { Dropdown, Row, Col, Card, Accordion } from "react-bootstrap";
 import PageTitle from "../../layouts/PageTitle";
@@ -12,6 +12,26 @@ import avatar4 from "../../../images/avatar/5.jpg";
 
 const UiAccordion = () => {
    const [active, setActive] = useState(0);
+   const [offeredDoctors, setDoctors] = useState([]);
+   const [isLoading, setLoading] = useState(false);
+
+   const fetchDoctors= () => {
+    setLoading(true);
+    fetch('http://localhost:5000/api/doctors')
+      .then((res) => res.json())
+      .then((data) => {
+        setDoctors(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchDoctors();
+  }, []);
 
    return (
       <Fragment>
@@ -39,16 +59,19 @@ const UiAccordion = () => {
                      </Accordion.Toggle>
 
                      <Accordion.Collapse eventKey="1">
+					
                      <div className="widget-media best-doctor pt-4">
+					
 										<div className="timeline row">
+										{offeredDoctors.map((doctors) => (
 											<div className="col-lg-6">
 												<div className="timeline-panel bg-white p-4 mb-4">
 													<div className="media mr-4">
 														<img src={avatar} width={90} alt />
 													</div>
 													<div className="media-body">
-														<h4 className="mb-2">Dr. Samantha Queque</h4>
-														<p className="mb-2 text-primary">Gynecologist</p>
+														<h4 className="mb-2">Dr.{doctors.last_name} {doctors.first_name}</h4>
+														<p className="mb-2 text-primary">{doctors.doctor_type}</p>
 														<div className="star-review">
 															<i className="fa fa-star text-orange mr-1"></i>
 															<i className="fa fa-star text-orange mr-1"></i>
@@ -65,7 +88,9 @@ const UiAccordion = () => {
 													</div>
 												</div>
 											</div>
-											<div className="col-lg-6">
+											
+										))}
+											<div className="col-l g-6">
 												<div className="timeline-panel active bg-white p-4  mb-4" >
 													<div className="media mr-4">
 														<img src={avatar1} width={90} alt />
@@ -162,7 +187,9 @@ const UiAccordion = () => {
 												</div>
 											</div>
 										</div>
+					 
 									</div>
+					 
                      </Accordion.Collapse>
                   </div>
                   <div className="accordion__item">

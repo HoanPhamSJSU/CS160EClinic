@@ -24,7 +24,7 @@ const NavHader = () => {
           </Fragment>
         ) : (
           <Fragment>
-            <img className="logo-abbr" src={logo} alt="" />
+            {/* <img className="logo-abbr" src={logo} alt="" /> */}
             <img className="logo-compact" src={logoText} alt="" />
             <img className="brand-title" src={logoText} alt="" />
           </Fragment>

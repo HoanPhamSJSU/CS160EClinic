@@ -1,17 +1,57 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect , state} from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import Axios from 'axios';
 
 const Login = ({ history }) => {
    const [loginData, setLoginData] = useState({});
-   const handleBlur = (e) => {
-      const newLoginData = { ...loginData };
-      newLoginData[e.target.name] = e.target.value;
-      setLoginData(newLoginData);
-   };
-   const submitHandler = (e) => {
+   const [email, setEmail] = useState('');
+   const [loginStatus, setLoginStatus] = useState('');
+   const [password, setPassword] = useState('');
+   const navigate = useNavigate();
+
+   const handleEmailChange = (e) => {
+      console.log('Typed = ${e.target.value}');
+      setEmail(e.target.value);
+    };
+    const handlePassChange = (e) => {
+      console.log('Typed = ${e.target.value}');
+      setPassword(e.target.value);
+    };
+
+   const SubmitLogin = (e) => {
       e.preventDefault();
-      history.push("/");
-   };
+      console.log("submitting login"); 
+      Axios.post('http://localhost:5000/api/signin', {
+        email: email,
+        password: password
+      })
+        .then((response) => {
+          if (response.data.message) {
+            setLoginStatus('Invalid Email Or Password');
+            console.log('response.data.message');
+            navigate('/react/doctors', { replace: true });
+          }
+          if (!response.data.message) {
+            setLoginStatus('Login Succesfull');
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('user', response.data.message);
+            navigate('/react/doctors', { replace: true });
+          }
+        })
+        .catch((err) => {
+          setLoginStatus('Invalid Email Or Password');
+        });
+    };
+
+    useEffect(() => {
+      Axios.get('http://localhost:5000/api/signin').then((response) => {
+        if (response.data.loggedIn == true) {
+          navigate('/react/doctors', { replace: true });
+        }
+      });
+    }, []);
+
+   
 
    return (
       <div className="authincation h-100 p-meddle">
@@ -27,9 +67,10 @@ const Login = ({ history }) => {
                               </h4>
                               <form
                                  action=""
-                                 onSubmit={(e) => submitHandler(e)}
+                                 onSubmit={(e) => SubmitLogin(e)}
                               >
                                  <div className="form-group">
+                                 <h2 className="error">{loginStatus} </h2>
                                     <label className="mb-1">
                                        <strong>Email</strong>
                                     </label>
@@ -37,8 +78,8 @@ const Login = ({ history }) => {
                                        type="email"
                                        className="form-control"
                                        defaultValue="hello@example.com"
-                                       name="Email"
-                                       onChange={handleBlur}
+                                       name="email"
+                                       onChange={handleEmailChange}
                                     />
                                  </div>
                                  <div className="form-group">
@@ -50,7 +91,7 @@ const Login = ({ history }) => {
                                        className="form-control"
                                        defaultValue="Password"
                                        name="password"
-                                       onChange={handleBlur}
+                                       onChange={handlePassChange}
                                     />
                                  </div>
                                  <div className="form-row d-flex justify-content-between mt-4 mb-2">
@@ -80,6 +121,7 @@ const Login = ({ history }) => {
                                        type="submit"
                                        value="Sign Me In"
                                        className="btn btn-primary btn-block"
+                                       onClick={SubmitLogin}
                                     />
                                  </div>
                               </form>

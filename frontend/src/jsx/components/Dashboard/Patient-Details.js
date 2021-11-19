@@ -48,7 +48,7 @@ class PatientDetails extends Component {
                               <div className="d-flex doctor-info-details mb-5">
                                  <div className="media align-self-start">
                                     <img
-                                       src={avatar1}
+                                       src={avatar}
                                        className="mr-3 img-fluid rounded"
                                        width={110}
                                        alt
@@ -98,31 +98,10 @@ class PatientDetails extends Component {
                                     Story About Disease
                                  </h3>
                                  <p className="mb-3">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat. Duis aute irure
-                                    dolor in reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat nulla pariatur.
-                                    Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt
-                                    mollit anim id est laborum
+                                    Story 1
                                  </p>
                                  <p className="mb-2">
-                                    Sed ut perspiciatis unde omnis iste natus
-                                    error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam, eaque ipsa
-                                    quae ab illo inventore veritatis et quasi
-                                    architecto beatae vitae dicta sunt
-                                    explicabo. Nemo enim ipsam voluptatem quia
-                                    voluptas sit aspernatur aut odit aut fugit,
-                                    sed quia consequuntur magni dolores eos qui
-                                    ratione voluptatem sequi nesciunt. Neque
-                                    porro quisquam est, qui dolorem ipsum quia
-                                    dolor sit amet, consectetur, adipisci velit,
-                                    sed quia non numquam eius modi{" "}
+                                    Story 2{" "}
                                  </p>
                               </div>
                            </div>
@@ -317,16 +296,7 @@ class PatientDetails extends Component {
                            </div>
                            <div className="card-body text-white">
                               <p className="mb-0 fs-14">
-                                 Lorem ipsum dolor sit amet, consectetur
-                                 adipiscing elit, sed do eiusmod tempor
-                                 incididunt ut labore et dolore magna aliqua. Ut
-                                 enim ad minim veniam, quis nostrud exercitation
-                                 ullamco laboris nisi ut aliquip ex ea commodo
-                                 consequat. Duis aute irure dolor in
-                                 reprehenderit in voluptate velit esse cillum
-                                 dolore eu fugiat nulla pariatur. Excepteur sint
-                                 occaecat cupidatat non proident, sunt in culpa
-                                 qui officia deserunt mollit anim id est laborum
+                                Doctor Note for patient: 
                               </p>
                            </div>
                         </div>

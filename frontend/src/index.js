@@ -5,10 +5,10 @@ import App from "./App";
 import SimpleReactLightbox from "simple-react-lightbox";
 
 ReactDOM.render(
-  <React.StrictMode >
+  <App >
     <SimpleReactLightbox>
       <App />
     </SimpleReactLightbox>
-  </React.StrictMode>,
+  </App>,
   document.getElementById("root")
 );

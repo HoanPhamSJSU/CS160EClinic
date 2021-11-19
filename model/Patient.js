@@ -1,10 +1,10 @@
 const mongoose = require('mongoose'); 
 
-const shelterSchema = mongoose.Schema({
-    shelter_name: {
+const patientSchema = mongoose.Schema({
+    patient_name: {
         type: String, 
     },
-    imageUrl: {
+    patient_image: {
         type: String, 
     },
     rating_score: {
@@ -25,11 +25,15 @@ const shelterSchema = mongoose.Schema({
     longitude: {
         type: String, 
     },
-    description: {
-        type: String,
+    address: {
+       city: {
+           type: String,
+       },
+       
+
     }
 });
 
 
-const shelters = mongoose.model('shelters', shelterSchema,'Shelters'); 
-module.exports = shelters
+const patients = mongoose.model('patients', patientSchema,'Patients'); 
+module.exports = patients

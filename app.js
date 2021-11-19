@@ -37,16 +37,16 @@ connectDatabase();
 // Login Route
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Shelter application." });
+  res.json({ message: "Welcome to EClinic application." });
 });
 
 // User
 const {
   signupController,
   signinController,
-  currentUser,
-  gettingUserInfo,
-  updateUserInfo
+  currentDoctor,
+  gettingDoctorInfo,
+  updateDoctorInfo
 } = require('./controllers/authController');
 
 const { validate } = require('./validators')
@@ -60,9 +60,7 @@ var port = process.env.PORT || 7000 || 5000;        // set our port
 
      
 // Hoan
-const {
-  loadShelterController, loadShelterControllerById
-} = require('./controllers/shelterController');
+const { loadDoctorController, loadDoctorControllerById } = require('./controllers/doctorController');
 
 // const {
 //   loadRankingController, loadRankingControllerById
@@ -78,16 +76,16 @@ router.use(function(req, res, next) {
 });
 
 app.use('/api', router);
-
-router.route('/register').post([registrationRules, validate], signupController);
-router.route('/currentuser').get(currentUser);
-router.route('/gettingUserInfo/:id').get(gettingUserInfo);
-
-router.route('/updateUserInfo').post(updateUserInfo);
 router.route('/signin').post([loginRules, validate], signinController);
 
-router.route('/shelters').get(loadShelterController);
-router.route('/shelters/:id').get(loadShelterControllerById);
+router.route('/register').post([registrationRules, validate], signupController);
+router.route('/currentDoctor').get(currentDoctor);
+router.route('/gettingDoctorInfo/:email').get(gettingDoctorInfo);
+
+router.route('/updateDoctorInfo').post(updateDoctorInfo);
+console.log('Getting Doctors');
+router.route('/doctors').get(loadDoctorController);
+router.route('/doctors/:id').get(loadDoctorControllerById);
 
 // router.route('/ranking').get(loadRankingController);
 // router.route('/ranking/:id').get(loadRankingControllerById);

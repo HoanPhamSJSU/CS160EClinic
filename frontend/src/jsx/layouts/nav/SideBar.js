@@ -164,7 +164,7 @@ class SideBar extends Component {
             <li className={`${deshBoard.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" aria-expanded="false">
                 <i className="flaticon-381-networking"></i>
-                <span className="nav-text">Dashboard</span>
+                <span className="nav-text">Doctors</span>
               </Link>
               <ul aria-expanded="false">
                 <li>
@@ -212,10 +212,11 @@ class SideBar extends Component {
                 </li>
               </ul>
             </li>
+            
             <li className={`${app.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" aria-expanded="false">
                 <i className="flaticon-381-television"></i>
-                <span className="nav-text">Apps</span>
+                <span className="nav-text">Patiens</span>
               </Link>
               <ul aria-expanded="false">
                 <li>
@@ -223,12 +224,12 @@ class SideBar extends Component {
                     className={`${path === "app-profile" ? "mm-active" : ""}`}
                     to="/app-profile"
                   >
-                    Profile
+                    Patient Mangement
                   </Link>
                 </li>
                 <li className={`${email.includes(path) ? "mm-active" : ""}`}>
                   <Link className="has-arrow" to="#" aria-expanded="false">
-                    Email
+                    Patient Details
                   </Link>
                   <ul
                     aria-expanded="false"
@@ -237,11 +238,21 @@ class SideBar extends Component {
                     <li>
                       <Link
                         className={`${
-                          path === "email-compose" ? "mm-active" : ""
+                          path === "patient-details" ? "mm-active" : ""
                         }`}
-                        to="/email-compose"
+                        to="/patient-details"
                       >
-                        Compose
+                        Patient Profiles
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={`${
+                          path === "patient-documents" ? "mm-active" : ""
+                        }`}
+                        to="/patient-documents"
+                      >
+                        Patient documents
                       </Link>
                     </li>
                     <li>
@@ -249,32 +260,23 @@ class SideBar extends Component {
                         className={`${
                           path === "email-inbox" ? "mm-active" : ""
                         }`}
-                        to="/email-inbox"
+                        to="/patient-schedule"
                       >
-                        Inbox
+                        Patient Schedule
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        className={`${
-                          path === "email-read" ? "mm-active" : ""
-                        }`}
-                        to="/email-read"
-                      >
-                        Read
-                      </Link>
-                    </li>
+                    
                   </ul>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     className={`${path === "app-calender" ? "mm-active" : ""}`}
                     to="/app-calender"
                   >
                     Calendar
                   </Link>
-                </li>
-                <li className={`${shop.includes(path) ? "mm-active" : ""}`}>
+                </li> */}
+                {/* <li className={`${shop.includes(path) ? "mm-active" : ""}`}>
                   <Link className="has-arrow" to="#" aria-expanded="false">
                     Shop
                   </Link>
@@ -353,10 +355,10 @@ class SideBar extends Component {
                       </Link>
                     </li>
                   </ul>
-                </li>
+                </li> */}
               </ul>
             </li>
-            <li className={`${charts.includes(path) ? "mm-active" : ""}`}>
+            {/* <li className={`${charts.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" aria-expanded="false">
                 <i className="flaticon-381-controls-3"></i>
                 <span className="nav-text">Charts</span>
@@ -559,8 +561,8 @@ class SideBar extends Component {
                   </Link>
                 </li>
               </ul>
-            </li>
-            <li className={`${plugins.includes(path) ? "mm-active" : ""}`}>
+            </li> */}
+            {/* <li className={`${plugins.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" aria-expanded="false">
                 <i className="flaticon-381-heart"></i>
                 <span className="nav-text">Plugins</span>
@@ -791,19 +793,16 @@ class SideBar extends Component {
                   </Link>
                 </li>
               </ul>
-            </li>
+            </li>  */}
           </MM>
 
           <div className="plus-box">
             <p>Create new appointment</p>
           </div>
           <div className="copyright">
+           
             <p>
-              <strong>Mediqu Hospital Admin Dashboard</strong> © 2021 All Rights
-              Reserved
-            </p>
-            <p>
-              Made with <span className="heart" /> by DexignZone
+              Made with <span className="heart" /> by H2L
             </p>
           </div>
         </PerfectScrollbar>

@@ -1,7 +1,7 @@
 import React from "react";
 
 /// React router dom
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 /// Css
 import "./index.css";
@@ -96,14 +96,16 @@ import MainSweetAlert from "./components/PluginsMenu/Sweet Alert/SweetAlert";
 import Toastr from "./components/PluginsMenu/Toastr/Toastr";
 import JqvMap from "./components/PluginsMenu/Jqv Map/JqvMap";
 import Lightgalery from "./components/PluginsMenu/Lightgalery/Lightgalery";
-
-import Setting from "./layouts/Setting";
+import Register from "./pages/Registration";
 
 const Markup = () => {
   let path = window.location.pathname;
   path = path.split("/");
   path = path[path.length - 1];
   let pagePath = path.split("-").includes("page");
+  // Hoan Code
+
+
   const routes = [
     /// Deshborad
     { url: "", component: Home },
@@ -178,7 +180,7 @@ const Markup = () => {
     { url: "uc-sweetalert", component: MainSweetAlert },
     { url: "uc-toastr", component: Toastr },
     { url: "map-jqvmap", component: JqvMap },
-	{ url: "uc-lightgallery", component: Lightgalery },
+    { url: "uc-lightgallery", component: Lightgalery },
 
     /// pages
     { url: "widget-basic", component: Widget },
@@ -195,16 +197,17 @@ const Markup = () => {
   ];
 
   return (
-    // <Router basename="/demo/fito/">
-    <Router basename="/react/demo/">
+    // <Router basename="/pages/">
+    <Router basename="/react/">
       <div
         id={`${!pagePath ? "main-wrapper" : ""}`}
         className={`${!pagePath ? "show" : "mh100vh"}`}
       >
         {!pagePath && <Nav />}
         <div className={` ${!pagePath ? "content-body" : ""}`}>
-          <div className={`${!pagePath ? "container-fluid" : ""}`}  style={{ "minHeight": "720px", "margin-bottom":"80px" }}>
-            <Switch>
+          <div className={`${!pagePath ? "container-fluid" : ""}`} style={{ "minHeight": "720px", "margin-bottom": "80px" }}>
+            {/* <Routes>
+              
               {routes.map((data, i) => (
                 <Route
                   key={i}
@@ -213,12 +216,35 @@ const Markup = () => {
                   component={data.component}
                 />
               ))}
-            </Switch>
+            </Routes> */}
+            <Routes>
+              <Route
+                path='/' element={<Home />}
+              />
+              <Route
+                path='/doctors' element={<Doctors />}
+              />
+              <Route
+                path='/doctors-details' element={<DoctorsDetails />}
+              >
+              </Route>
+              <Route
+                path='/page-login' element={<Login />}
+              >
+              </Route>
+              <Route
+                path='/patient-details' element={<PatientDetails />}
+              />
+                <Route
+                path='/page-register' element={<Register />}
+              >
+
+              </Route>
+            </Routes>
           </div>
         </div>
         {!pagePath && <Footer />}
       </div>
-      <Setting />
     </Router>
   );
 };

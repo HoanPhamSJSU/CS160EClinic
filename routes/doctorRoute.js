@@ -1,12 +1,13 @@
 const express = require('express');
+const { loadDoctorController } = require('../controllers/doctorController');
 const router = express.Router();
-const shelterController = require('../controllers/shelterController');
+const doctorController = require('../controllers/doctorController');
 const awaitHandlerFactory = require('../middleware/awaitHandlerFactory.middleware');
 
 
 
-router.get('/', awaitHandlerFactory(shelterController.getAllShelters)); // localhost:3000/api/users
-router.get('/shelter/:id', awaitHandlerFactory(shelterController.getShelterById)); // localhost:3000/api/users/id/1
+router.get('/doctor', awaitHandlerFactory(doctorController.loadDoctorController)); // localhost:3000/api/users
+router.get('/doctor/:id', awaitHandlerFactory(doctorController.loadDoctorControllerById)); // localhost:3000/api/users/id/1
 // router.get('/username/:username', auth(), awaitHandlerFactory(userController.getUserByuserName)); // localhost:3000/api/v1/users/usersname/julia
 // router.get('/whoami', auth(), awaitHandlerFactory(userController.getCurrentUser)); // localhost:3000/api/v1/users/whoami
 // router.post('/', createUserSchema, awaitHandlerFactory(userController.createUser)); // localhost:3000/api/v1/users

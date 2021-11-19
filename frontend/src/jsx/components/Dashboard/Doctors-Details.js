@@ -86,7 +86,7 @@ const DoctorsDetails = () => {
                       <i className="flaticon-381-heart"></i>
                     </div>
                     <div className="media-body">
-                      <h2 className="mb-2">Dr. Alexndro Zignee</h2>
+                      <h2 className="mb-2">Dr. Linh Huynh</h2>
                       <p className="mb-md-2 mb-sm-4 mb-2">#P-00016</p>
                       <span>
                         <i className="flaticon-381-clock"></i> Join Date 21 August
@@ -121,26 +121,18 @@ const DoctorsDetails = () => {
                   <div className="doctor-info-content">
                     <h3 className="text-black mb-3">Short Biography</h3>
                     <p className="mb-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
+                    Dr.	Linh	Stern	was	born	in	DuBois,	Pennsylvania	and	is	a	graduate	of	Villanova	
+University.	He	obtained	his	medical	degree	at	Thomas	Jefferson	University	in	
+Philadelphia.	His	residency	was	at	Thomas	Jefferson	and	its	affiliated	Wills	Eye	
+Hospital,	and	he	completed	his	training	with	fellowships	at	the	University	of	
+Connecticut in	cataract	and	corneal	surgery.
+
                     </p>
                     <p className="mb-2">
-                      Sed ut perspiciatis unde omnis iste natus error sit
-                      voluptatem accusantium doloremque laudantium, totam rem
-                      aperiam, eaque ipsa quae ab illo inventore veritatis et
-                      quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                      enim ipsam voluptatem quia voluptas sit aspernatur aut
-                      odit aut fugit, sed quia consequuntur magni dolores eos
-                      qui ratione voluptatem sequi nesciunt. Neque porro
-                      quisquam est, qui dolorem ipsum quia dolor sit amet,
-                      consectetur, adipisci velit, sed quia non numquam eius
-                      modi{" "}
+                    Dr.	Linh	has	thirty	years’	experience	in	ophthalmic	surgery,	with	special	interest	in	
+cataract	surgery,	corneal	transplantation,	and	laser	refractive	procedures.	He	is	a	
+founding	member	of	Precision	LASIK	Group,	Chief	of	Ophthalmology	at	The	Hospital	
+of	Central	Connecticut,	and	co-medical	director	of	the	Connecticut	eye	bank.{" "}
                     </p>
                   </div>
                 </div>
@@ -166,11 +158,16 @@ const DoctorsDetails = () => {
                     />
                     <div className="media-body">
                       <h3 className="mt-0 mb-2 text-black bold mt-1">
-                        <b>Brian Lucky</b>
+                      <Link
+                    to="/patient-details"
+                  >
+                   Brian Lucky
+                  </Link>
+                        {/* <b>Brian Lucky</b> */}
                       </h3>
                       <h4 className="mb-4 text-primary">Cold & Flue</h4>
                       <Link to={"#"} className="btn-link mr-4 text-dark">
-                        Unassign
+                        Assigned
                       </Link>
                       <Link to={"#"} className="btn-link mr-1 text-danger ">
                         Check Imporvement
