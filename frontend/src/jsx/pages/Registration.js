@@ -40,18 +40,7 @@ const Register = ({ history }) => {
                                        onChange={handleBlur}
                                     />
                                  </div>
-                                 <div className="form-group">
-                                    <label className="mb-1">
-                                       <strong>Email</strong>
-                                    </label>
-                                    <input
-                                       type="email"
-                                       className="form-control"
-                                       placeholder="hello@example.com"
-                                       name="Email"
-                                       onChange={handleBlur}
-                                    />
-                                 </div>
+
                                  <div className="form-group">
                                     <label className="mb-1">
                                        <strong>Password</strong>
@@ -64,6 +53,91 @@ const Register = ({ history }) => {
                                        onChange={handleBlur}
                                     />
                                  </div>
+
+                                 <div className="form-group">
+                                    <label className="mb-1">
+                                       <strong>Email</strong>
+                                    </label>
+                                    <input
+                                       type="email"
+                                       className="form-control"
+                                       placeholder="hello@example.com"
+                                       name="Email"
+                                       onChange={handleBlur}
+                                    />
+                                 </div>
+
+                                 <div className="form-group">
+                                    <label className="mb-1">
+                                       <strong>Patient ID</strong>
+                                    </label>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="Patient ID"
+                                       name="patientID"
+                                       onChange={handleBlur}
+                                    />
+                                 </div>
+
+                                 <div className="form-group">
+                                    <label className="mb-1">
+                                       <strong>First name</strong>
+                                    </label>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="First name"
+                                       name="firstname"
+                                       onChange={handleBlur}
+                                    />
+                                 </div>
+
+                                 <div className="form-group">
+                                    <label className="mb-1">
+                                       <strong>Last name</strong>
+                                    </label>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="Last name"
+                                       name="lastname"
+                                       onChange={handleBlur}
+                                    />
+                                 </div>
+
+                                 <div className="form-group">
+                                    <label className="mb-1">
+                                       <strong>Address</strong>
+                                    </label>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="Address"
+                                       name="address"
+                                       onChange={handleBlur}
+                                    />
+                                 </div>
+
+                                 <div className="form-group">
+                                    <label className="mb-1">
+                                       <strong>Phone number</strong>
+                                    </label>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="Phone number"
+                                       name="phonenumber"
+                                       onChange={handleBlur}
+                                    />
+                                 </div>
+
+
+
+                                 
+
+                                 
+
                                  <div className="text-center mt-4">
                                     <input
                                        type="submit"
