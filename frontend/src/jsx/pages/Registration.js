@@ -132,11 +132,28 @@ const Register = ({ history }) => {
                                     />
                                  </div>
 
+                                 <div className="form-group">
+                                    <label className="mb-1">
+                                       <strong>Symptoms</strong>
+                                    </label>
 
+                                    <select
+                                       id="symptoms"
+                                       className="form-control"
+                                       placeholder="Symptoms"
+                                       name="symptoms"
+                                       onChange={handleBlur}>
 
-                                 
-
-                                 
+                                       <option value="sorethroat">Sore throat</option>
+                                       <option value="cough">Cough</option>
+                                       <option value="sneezing">Sneezing</option>
+                                       <option value="fever">Fever</option>
+                                       <option value="bodyaches">Body aches</option>
+                                       <option value="tiredness">Tiredness</option>
+                                       <option value="headache">Headache</option>
+                                       <option value="nausea">Nausea</option>                                       
+                                    </select>
+                                 </div>
 
                                  <div className="text-center mt-4">
                                     <input
