@@ -140,7 +140,7 @@ const Register = ({ history }) => {
                                     <select
                                        id="symptoms"
                                        className="form-control"
-                                       placeholder="Symptoms"
+//                                       placeholder="Symptoms"
                                        name="symptoms"
                                        onChange={handleBlur}>
 
