@@ -30,6 +30,19 @@ const Register = ({ history }) => {
                               >
                                  <div className="form-group">
                                     <label className="mb-1">
+                                       <strong>Patient ID</strong>
+                                    </label>
+                                    <input
+                                       type="text"
+                                       className="form-control"
+                                       placeholder="Patient ID"
+                                       name="patientID"
+                                       onChange={handleBlur}
+                                    />
+                                 </div>
+
+                                 <div className="form-group">
+                                    <label className="mb-1">
                                        <strong>Username</strong>
                                     </label>
                                     <input
@@ -63,19 +76,6 @@ const Register = ({ history }) => {
                                        className="form-control"
                                        placeholder="hello@example.com"
                                        name="Email"
-                                       onChange={handleBlur}
-                                    />
-                                 </div>
-
-                                 <div className="form-group">
-                                    <label className="mb-1">
-                                       <strong>Patient ID</strong>
-                                    </label>
-                                    <input
-                                       type="text"
-                                       className="form-control"
-                                       placeholder="Patient ID"
-                                       name="patientID"
                                        onChange={handleBlur}
                                     />
                                  </div>
