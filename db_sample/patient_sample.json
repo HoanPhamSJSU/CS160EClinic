@@ -1,0 +1,108 @@
+{
+    "preferred_name": "john nguyen",
+    "phone_number": "4081238585",
+    "brief_msg": "yes",
+    "symptoms": {
+        "general_symptoms": [
+            "fever",
+            "unexplained weight loss",
+            "extreme tiredness",
+            "unexplained weight gain",
+            "swollen nodes",
+            "excessive thirst",
+            "cold or heat intolerance",
+            "unusal bleeding"
+        ],
+        "eyes": [
+            "unexplained vision loss",
+            "double vision",
+            "eye pain"
+        ],
+        "ear, nose, mouth and throat": [
+            "sore throat",
+            "runny nose",
+            "ear pain"
+        ],
+        "breats": [
+            "lumps",
+            "nipple discharge",
+            "skin changes"
+        ],
+        "lungs and heart": [
+            "chest pain",
+            "palpitations",
+            "cough",
+            "wheezing",
+            "breathing difficulties"
+        ],
+        "abdomen": [
+            "nausea",
+            "vomiting",
+            "pain",
+            "constipation",
+            "diarrhea",
+            "bloddy stools",
+            "change in bowel habits"
+        ],
+        "genitourinary": [
+            "pain with urination",
+            "blood in urine",
+            "leaking urine",
+            "frequent trips to the bathroom"
+        ],
+        "females only": [
+            "irregular periods",
+            "vaginal bleeding after menopause",
+            "sexua concerns",
+            "unusual vaginal discharge",
+            "concerns about sexually transmitted infections",
+            "severe pain with periods"
+        ]
+    },
+    "having_periods": [
+        "yes",
+        "no"
+    ],
+    "what_age": "",
+    "due_to": [
+        "menopause",
+        "surgery"
+    ],
+    "how_old_first_period": "",
+    "when_last_period": "",
+    "how_often_period": "",
+    "how_many_days_bleed": "",
+    "times_pregnant": "",
+    "males_only": [
+        "diffculty starting/stopping stream",
+        "difficulty getting/maintaining erections",
+        "feeling like bladder wont' empy"
+    ],
+    "skin": [
+        "rashes",
+        "changing moles",
+        "changes in hair/skin/nails"
+    ],
+    "neurological": [
+        "new or unusual headaches",
+        "persistent weakness or numbness",
+        "falling",
+        "difficulty falling asleep",
+        "frequent awakening"
+    ],
+    "mood": [
+        "depression",
+        "excessive worry",
+        "suicidal thougths"
+    ],
+    "other": "list any other symptoms not mentioned above",
+    "medical_history": {
+        "current": "",
+        "past": ""
+    },
+    "additional_sheet": "",
+    "completed_form_change": [
+        "yes",
+        "no"
+    ]
+}
